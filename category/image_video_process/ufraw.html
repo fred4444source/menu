@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+		<title>ufraw</title>
+		<style>
+			html, body {
+				margin : 0;
+				padding : 0;
+				height : 100%;
+				width : 100%;
+			}
+			.class___line_head {
+				margin-left : 2em;
+			}
+			.class___code {
+				color : yellow;
+				background-color : black;
+				line-height : 24px;
+				font-size : 18px;
+				vertical-align : bottom;
+				white-space : nowrap;
+				overflow-x : auto;
+			}
+			.class___tab {
+				display : inline-block;
+				width : 4ex;
+				overflow-x : hidden;
+				line-height : 24px;
+				font-size : 18px;
+				vertical-align : bottom;
+				white-space : pre-wrap;
+			}
+			.class___code_last_line {
+				display : inline-block;
+				white-space : nowrap;
+			}
+			.shell_instruction {
+				color : yellow;
+				background-color : black;
+				font-weight : 800;
+				padding : 4px;
+			}
+			section {
+				margin-top : 60px;
+			}
+			section > div {
+				padding-left : 2em;
+				line-height : 180%;
+			}
+		</style>
+		<script>
+		</script>
+	</head>
+	<body>
+		<article>
+			<header>
+				
+			</header>
+			<section>
+				<h2>file format convert</h2>
+				<div>
+					将CR2图片文件转换为jpg
+					<div class="class___code">
+						ufraw-batch old_file_name.CR2 --out-type=jpg --output new_file_name.jpg</div>
+					<br/>
+默认情况下，ufraw-batch 会自动应用一些常规的处理，比如进行镜头失真矫正。矫正之后的图片可能会在四条边的中间部位出现黑边。这是因为矫正之后图像往中间缩小了一点点。要自动裁切掉这些黑边，可以在上面的指令中加入 --auto-crop 参数,
+					<div class="class___code">
+						ufraw-batch old_file_name.CR2 --out-type=jpg --output new_file_name.jpg --auto-crop
+					</div>
+					将当前路径下的所有CR2文件批量转换, 可以指定输出目录, 参数为 --out-path=output_path
+					<div class="class___code">
+						ufraw-batch --out-type=jpg --auto-crop --out-path=new_file_path *.CR2
+					</div>
+					或
+					<div class="class___code">
+						ufraw-batch --out-type=jpg --out-path=new_file_path *.CR2
+					</div>
+					若在转换时出现错误可能导致后面的文件未被转换已结束命令, 可以用shell的循环来执行转换解决此问题
+					<div class="class___code">
+						for&nbsp;i&nbsp;in&nbsp;*.CR2<br/>
+						do<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;ufraw-batch&nbsp;$i&nbsp;--out-type=jpg&nbsp;--out-path=new_file_path&nbsp;--auto-crop<br/>
+						done<br/>
+					</div>
+				</div>
+			</section>
+		</article>
+	</body>
+</html>
