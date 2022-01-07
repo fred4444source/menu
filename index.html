@@ -5,8 +5,36 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
 		<title>repository menu</title>
 		<style>
+			.class___tab {
+				display : inline-block;
+				width : 4ex;
+				overflow-x : hidden;
+				line-height : 24px;
+				font-size : 18px;
+				vertical-align : bottom;
+				white-space : pre-wrap;
+			}
+			.class___copy_other_people_content {
+				background-color : #aef5a8;
+				color : black;
+			}
 		</style>
 		<script>
+			const add_fold = function(currentScript) {
+				const cs = currentScript;
+				const pn = cs.parentNode;
+				const ppn = pn.parentNode;
+				ppn.children[0].addEventListener('click', function(e) {
+					let display = pn.style.getPropertyValue('display');
+					if (display) {
+						ppn.children[0].textContent = '-';
+						pn.style.removeProperty('display');
+					} else {
+						ppn.children[0].textContent = '+';
+						pn.style.setProperty('display', 'none');
+					}
+				});
+			}
 		</script>
 	</head>
 	<body>
@@ -143,14 +171,597 @@
 						<li><a target="_blank" href="https://choosealicense.rustwiki.org/">选择一个开源许可证 | 选择一个许可证</a></li>
 						<li><a target="_blank" href="https://github.com/choosealicense-cn/choosealicense-cn.github.io">GitHub - choosealicense-cn/choosealicense-cn.github.io: 选择一个开源许可证中文网站（The Chinese Translation of the ChooseALicense.com）</a></li>
 						<li><a target="_blank" href="https://blog.csdn.net/jhsword/article/details/92389491">程序员不可不知的版权协议_第七宇林的博客-CSDN博客</a></li>
+						<li>
+							<div>
+								<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地摘抄</span>
+								<div style="display:none;">
+									<script>add_fold(document.currentScript);</script>
+									<div class="class___copy_other_people_content">
+										程序员不可不知的版权协议<br/>
+										<br/>
+										文章目录<br/>
+										<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开源协议<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;为什么要添加开源协议?<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如何选择合适的开源协议?<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;知识共享协议<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;禁止商用<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;保持原文<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;明确署名<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关于参考链接<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关于抄袭和洗文(洗稿)<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;结语<br/>
+										<br/>
+										开源协议<br/>
+										<br/>
+										相信很多小伙伴在开发的时候都默认遵循&nbsp;不重复造轮子(偷懒)&nbsp;这一原则，只要有了思路就马上在GitHub搜索一下，看看是否有人已经做了，如果已经有做好的，自然就不客气啦，拿过来修改一下就能用，不由得心中暗喜，又省了好多时间能用来把妹(LOL)。然而你可能没注意到，在诸多的开源代码中存在一些陷阱(约束)，就是开源协议，下面就带大家了解一下开源协议。<br/>
+										为什么要添加开源协议?<br/>
+										<br/>
+										首先是对作者的保护，防止知识成果被恶意利用。<br/>
+										<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;开源协议中一般都包含免责声明(禁止代码的作者承担代码使用后的风险及产生的后果)，比如你开源了一个破解智能锁的代码，如果有人利用这个去盗窃导致他人损失，你是无需承担责任的。<br/>
+										<br/>
+										其次是对使用者的保护，方便使用者。<br/>
+										<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;使用者一看就知道自己允许进行哪些操作，不允许进行哪些操作。<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;未添加协议的代码默认是作者保留所有权利的(对此不同国家的法律可能稍微存在区别)，这就像一颗定时炸弹，如果你在项<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;目中使用了这一份没有协议的代码，原作者只要能证明你未经许可使用了他的代码，是能够起诉你的。<br/>
+										<br/>
+										如何选择合适的开源协议?<br/>
+										<br/>
+										由于开源协议种类众多，作为普通人很难搞懂它们之间的区别，即便是常见的协议大家也不完全知道协议的内容，那么如何快速的选择一款适合自己的协议呢？如果你是一个怕麻烦的人，下面的建议或许对你有有帮助。<br/>
+										<br/>
+										<img src="./category/open_source_license/refs/imgs/00001.png"/><br/>
+										<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;目前使用最多的是
+										<a target="_blank" href="https://choosealicense.com/licenses/mit/">MIT协议</a>
+										，而我(GcsSloop)常用的则是
+										<a target="_blank" href="https://choosealicense.com/licenses/apache-2.0/">&nbsp;Apache&nbsp;License&nbsp;2.0&nbsp;协议</a>
+										，因为这样可以帮助我知道有哪些开源项目使用了我的内容，以及进行了何种修改，有利于我改进自己项目。<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;之所以采用这个协议，而不使用
+										<a target="_blank" href="https://choosealicense.com/licenses/gpl-3.0/">&nbsp;GNU&nbsp;GPLv3&nbsp;</a>
+										，是因为
+										<a target="_blank" href="https://choosealicense.com/licenses/gpl-3.0/">&nbsp;GNU&nbsp;GPLv3</a>
+										使用者必须按照相同的协议开源，而
+										<a target="_blank" href="https://choosealicense.com/licenses/apache-2.0/">&nbsp;Apache&nbsp;License&nbsp;2.0&nbsp;协议</a>
+										相对比较宽松，你可以私用，也可以闭源，但是如果开源项目使用到的时候，只需要放置一下版权声明以及修改声明即可。<br/>
+										<br/>
+										<a target="_blank" href="https://choosealicense.com/">选择一个开源软件协议</a>
+										<br/>
+										<br/>
+										上面介绍的三种协议是最常用的几种，如果你想选择更多的开源协议可以到
+										<a target="_blank" href="https://choosealicense.com/">选择一个开源软件协议</a>
+										查看，这个网站是GitHub创建的，我做了一些微小的翻译工作，原网址&nbsp;Choose&nbsp;an&nbsp;open&nbsp;source&nbsp;license&nbsp;如果你觉得我的那些部分翻译不准确可以到&nbsp;ChooseLicense.github.io&nbsp;来给我提建议，如果直接提交&nbsp;Pull&nbsp;Request&nbsp;就更好了。<br/>
+										<br/>
+										注意：不论你采用何种协议，一旦你在一些平台上发布你的内容，你就默认接受了该平台的协议，这一点尤其需要注意，例如GitHub上，默认允许他人查看和fork你的开源项目。<br/>
+										知识共享协议<br/>
+										<br/>
+										知识共享协议和开源协议均属于版权协议的一种，常用于数据、多媒体、网站、文章等内容，是作者保障自己权益的一道屏障。<br/>
+										<br/>
+										知识共享协议(Creative&nbsp;Commons，也称为CC协议)&nbsp;有很多版本，不过需要注意的是，开源协议同样适用于大部分内容，例如：你的文章等作品，但是知识共享协议则不适用于开源软件。<br/>
+										<br/>
+										注意：虽然你可以采用知识共享协议来保护你的内容，但是一旦你在某些平台上发布你的内容，你就默认接受了该平台的协议，这一点尤其需要注意。<br/>
+										<br/>
+										下面我们来看两个例子，仅看知识产权部分的：<br/>
+										<br/>
+										<a target="_blank" href="https://www.baidu.com/duty/right.html">百度的知识产权声明:</a>
+										<br/>
+										<a target="_blank" href="https://www.zhihu.com/terms#sec-licence">知乎的知识产权声明:</a>
+										<br/>
+										<br/>
+										对比一下，你在百度上发表的任何东西，不论是百度知道，百度文库或者是贴吧，百度自动拥有版权，可以随意使用这些内容，而在知乎上的回答，文章等则是作者拥有版权，当然了，前提是你为原创作者。<br/>
+										<br/>
+										<a target="_blank" href="https://creativecommons.org/choose/">选择一个知识共享协议</a>
+										<br/>
+										你可以到https://creativecommons.org/choose/为自己选择一个合适的知识共享协议。<br/>
+										<br/>
+										我的文章等其他非代码内容一般会采用&nbsp;知识共享&nbsp;署名-非商业性使用-禁止演绎&nbsp;4.0&nbsp;国际&nbsp;许可协议。你在我的&nbsp;AndroidNote&nbsp;和我的&nbsp;个人网站&nbsp;底部均可以看到声明。<br/>
+										<br/>
+										这在知识共享协议里面算是比较严苛的一个协议了，它允许所有人在非商业用途下免费转载我的文章，但必须：<br/>
+										<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;保持原文，不作修改。<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;明确署名，即至少注明&nbsp;作者：GcsSloop&nbsp;字样以及文章的原始链接，且不得使用&nbsp;rel=“nofollow”&nbsp;标记。<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;商业用途可以联系本人，需要征得本人同意。<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;下面解释一下我为什么要采用这一个协议：<br/>
+										<br/>
+										禁止商用<br/>
+										<br/>
+										这个毋庸置疑，为了保证自身的利益，写一篇文章需要经过选材，制作图片，书写，排版，排查错误等诸多步骤，其中每一步都凝聚了作者大量的心血，如果被别人一声不吭拿去为自己赚钱了，作者岂不是要哭晕在厕所。<br/>
+										保持原文<br/>
+										<br/>
+										之前又一个文章中因为一个公式问题引起了一些混乱，那篇文章中本身公式是正确的，可能是因为书写方式问题，导致一些小伙伴错认为是有误的，而且有小伙伴在fork我的仓库后修改了文章中的公式，之后有小伙伴讨论这个公式的问题，因为担心小伙伴看到的是错误版本，在这个问题上浪费了很多时间。所以我的文章转载均要求保持原文，如果你觉得我的文章中有错误的地方，可以到评论区或者其他地方告诉我。<br/>
+										明确署名<br/>
+										<br/>
+										保持署名和原始链接可以保证其他人能找到原文的作者，如果文章出现了问题，能够反馈给原作者，以保证文章内容正确，不误导以后阅读的人。<br/>
+										关于参考链接<br/>
+										<br/>
+										我们人类之所以发展这么快，是因为有前人的努力，我们都是站在巨人肩膀上的人，书写文章也不例外，有很多需要借鉴他人的地方，如果借鉴了他人的想法或者成果，建议在文末加上参考链接。除了能够帮助读者更好理解知识的来源外，也可以顺便给这些人带来一些名气。<br/>
+										<br/>
+										我书写参考链接的规则一般是这样的，我借鉴了他人的想法，成果，或者一部分成果，我都会在文末添加上文章地址。<br/>
+										<br/>
+										有时候有小伙伴会反馈说，我的文章和我参考链接里面的文章有些地方存在冲突，这是因为我并没有把原文中这一部分作为参考。如果一些文章的理论本身就是错误的，但思路是正确的，或者部分内容是正确的，我使用了这些内容，同样会将其加入我的参考链接中。<br/>
+										关于抄袭和洗文(洗稿)<br/>
+										<br/>
+										抄袭（英语：plagiarism），亦称作剽窃，根据教育部国语辞典定义[1]，为抄录他人作品以为己作。对于原著未经或基本未经修改的抄录，这是一种侵犯著作权的行为。(引用自维基百科)<br/>
+										<br/>
+										抄袭属于一种比较低级的方式，更高级一点的一般称为洗文或者洗稿，常见洗稿有以下的方式:<br/>
+										<br/>
+										第一种是打乱排版，然后用近似的语句来表达原文的内容。<br/>
+										<br/>
+										第二种是按照原作者类似的风格来书写一件类似的事情，对其中对内容稍作修改。<br/>
+										<br/>
+										第三种主要针对不允许转载的文章，先抄袭到某某论坛或者不知名网站然后转载一下标注为某某论坛(网站)，轻松抹去原作者信息。<br/>
+										<br/>
+										这类洗稿文章是让原作者很头疼的东西，有些新司机技术不纯熟，一眼就能看出是洗稿，而有些老司机，洗出来的文章很难辨识，也很难维权。但如果你有时间和抄袭者正面刚的话，还是有很大机会能得到正义的支持的，毕竟群众的眼睛都是雪亮的，不过这对自身又有什么意义呢？浪费大量时间而且没有任何回报。<br/>
+										<br/>
+										正是因为抄袭成本低而维权成本高，才导致了目前存在大量抄袭的内容，百度搜索结果尤其明显，很多排名靠前的技术文章都不是作者原文，而是被一些大平台转载(抄袭)过去的。相比之下Google就好很多了，而且举报抄袭处理速度也很快。<br/>
+										结语<br/>
+										<br/>
+										为自己选择一个合适的&nbsp;开源协议&nbsp;或者&nbsp;知识共享协议，&nbsp;虽然大部分时间并没有什么用，但至少能在一定程度上保护自身的权益。<br/>
+										<br/>
+										最后个人建议多用Google，远离百度。<br/>
+										<br/>
+										相关网站<br/>
+										<a target="_blank" href="https://choosealicense.com/">选择一个开源软件协议</a>
+										<br/>
+										<a target="_blank" href="https://creativecommons.org/choose/">选择一个知识共享协议</a>
+										<br/>
+									</div>
+								</div>
+							</div>
+						</li>
 						<li><a target="_blank" href="https://www.zhihu.com/question/19568896">主流开源协议之间有何异同？ - 知乎</a></li>
+						<li>
+							<div>
+								<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地摘抄</span>还未摘抄
+								<div style="display:none;">
+									<script>add_fold(document.currentScript);</script>
+									<div class="class___copy_other_people_content">
+									</div>
+								</div>
+							</div>
+						</li>
 						<li><a target="_blank" href="https://www.modb.pro/db/27018">PostgreSQL与MySQL版权比较 - 墨天轮</a></li>
+						<li>
+							<div>
+								<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地摘抄</span>
+								<div style="display:none;">
+									<script>add_fold(document.currentScript);</script>
+									<div class="class___copy_other_people_content">
+										PostgreSQL与MySQL版权比较<br/>
+										<br/>
+										前言<br/>
+										作为开源数据库的杰出代表，主要来对比PostgreSQL与MySQL的版权。版权可以理解为许可（License），直接与开源协议的描述相关，下面来看一下两者的许可表述。<br/>
+										PostgreSQL许可<br/>
+										PostgreSQL许可是一种自由的开源许可，与BSD或MIT许可证类似。1994年之前的部分版权属于加利福尼亚大学董事会；1996年-2020年，部分版权属于PostgreSQL全球开发小组；全球开发小组主要成员分散在世界各地，其背后不受任何公司实体控制，这使其成为一个真正的开放项目。<br/>
+										&nbsp;<br/>
+										BSD开源协议是一个给于使用者很大自由的协议。可以自由的使用，修改源代码，也可以将修改后的代码作为开源或者专有软件再发布，被誉为开源许可的“活雷锋”。<br/>
+										&nbsp;<br/>
+										BSD&nbsp;代码鼓励代码共享，但需要尊重代码作者的著作权。BSD由于允许使用者修改和重新发布代码，也允许使用或在BSD代码上开发商业软件发布和销售，因此是对商业集成很友好的协议。而很多的公司企业在选用开源产品的时候都首选BSD协议，因为可以完全控制这些第三方的代码，在必要的时候可以修改或者二次开发。<br/>
+										PostgreSQL许可描述：https://www.postgresql.org/about/licence/<br/>
+										&nbsp;<br/>
+										MySQL许可<br/>
+										众所周知，MySQL被Oracle所控制，MySQL同时使用了GPL和一种商业许可（称为双重许可）。<br/>
+										&nbsp;<br/>
+										GPL(General&nbsp;Public&nbsp;license)是公共许可，遵循了GPL的软件是公共的。如果某软件使用了GPL软件，那么该软件也需要开源，如果不开源，就不能使用GPL软件，这和是否把该软件商用与否是没关系的。<br/>
+										&nbsp;<br/>
+										如果无法满足GPL，就需要获得商业许可，通过与Oracle公司联系，制定解决方案，受Oracle公司约束。<br/>
+										&nbsp;<br/>
+										具体约束：<br/>
+										①　不允许对在MySQL上作出的修改申请专利；<br/>
+										②　MySQL上的修改需要公开，且所有权归Oracle所有；<br/>
+										③　出于纯学术目的、练习目的源码修改也是符合GPL的；<br/>
+										④　Oracle的MySQL企业版或高级功能会涉及费用，并且Oracle公司不允许其它基于MySQL的闭源产品。<br/>
+										其它基于MySQL的数据库也遵循并必须遵循GPL许可或GPL的修订版GPL&nbsp;V2，譬如Mariadb。GPL&nbsp;许可逻辑上与商业许可存在冲突，可以理解为：商业许可是控制MySQL的公司留给自己的特权。<br/>
+										由于GPL严格要求使用了GPL类库的软件产品必须使用GPL协议，对于使用GPL协议的开源代码，商业软件或者对代码有保密要求的就不适合集成/采用作为类库和二次开发的基础。从GPL&nbsp;到GPL&nbsp;V2&nbsp;V3，另外还有LGPL，这个协议一直有在演变中，内容表述比较复杂，这会影响开源精神的发展与传承并且容易产生分歧。<br/>
+										&nbsp;<br/>
+										MySQL许可描述：https://www.mysql.com/about/legal/licensing/oem/<br/>
+										GPL&nbsp;V2原文描述：https://www.gnu.org/licenses/old-licenses/gpl-2.0.html<br/>
+										&nbsp;<br/>
+										总结<br/>
+										同为开源软件，PostgreSQL源码使用自由友好、商业应用不受任何公司实体所控制，而MySQL则在一定程度上有所限制。<br/>
+									</div>
+								</div>
+							</div>
+						</li>
 						<li><a target="_blank" href="https://liferay.dev/ask/questions/general/-license--1">各种License介绍</a></li>
+						<li>
+							<div>
+								<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地摘抄</span>
+								<div style="display:none;">
+									<script>add_fold(document.currentScript);</script>
+									<div class="class___copy_other_people_content">
+										各种License介绍<br/>
+										<br/>
+										Asked&nbsp;03/30/10&nbsp;-&nbsp;Active&nbsp;03/30/10&nbsp;-&nbsp;Viewed&nbsp;77428&nbsp;Times<br/>
+										原文<br/>
+										<br/>
+										什么是License<br/>
+										<br/>
+										许多混乱就始于你不知道License到底是什么，到底有什么含义。当你对你的产品使用License时，并不意味着你放弃了任何权利，你依然对其拥有原著作权。License只是授予他们于特定权利来使用你的产品。<br/>
+										<br/>
+										License只是把你的作品释放到公有领域，或者给各个拷贝赋予权限。也意味着你放弃了版权收入，别人也没有义务把你列为原作者或贡献者。<br/>
+										<br/>
+										开放源代码许可协议更容易为他人作出贡献，而不必寻求特别的许可。它也可以保护你作为原创者的权利，至少确认了你的贡献。它还可以保证你的工作不为别人所剽窃。<br/>
+										GNU&nbsp;General&nbsp;Public&nbsp;License<br/>
+										<br/>
+										GNU&nbsp;General&nbsp;Public&nbsp;License&nbsp;（GPL）的可能是开源项目最常用的许可证。GPL赋予和保证了开源项目开发者广泛的权利。基本上，它允许用户合法复制，分发和修改软件。&nbsp;这意味着你可以：<br/>
+										<br/>
+										*&nbsp;复制软件<br/>
+										<br/>
+										复制软件到自己的服务器，客户端的服务器，你自己的电脑，几乎任何你想要的地方，而且没有数量限制。<br/>
+										*&nbsp;发布软件<br/>
+										<br/>
+										发布你想要的软件，例如，在你的网站提供下载链接，刻成光盘，打印出来等等。<br/>
+										*&nbsp;收取费用<br/>
+										<br/>
+										如果你想在向别人提供软件时收费，如设置在别人的网站上或者其他用途时。GPL允许你这么做，但是你必须给客户提供一个GPL副本，告诉他们可以在其他地方得到免费版本。当然最好在此之前，告诉客户，你为什么收费。<br/>
+										*&nbsp;可以任意修改<br/>
+										<br/>
+										如果你想添加或删除功能，没问题。如果想在其他项目中使用部分代码，也是可以的，但是唯一的限制是此项目也必须按GPL发布。<br/>
+										<br/>
+										商业软件不能使用GPL协议的代码。<br/>
+										GNU&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License<br/>
+										<br/>
+										还有另一个GNU&nbsp;License：GNU&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;（LGPL）。比起GPL它授予的权限较少。一般来说，LGPL比较适合连接到非GPL或者非开源文件的库文件。由于GPL的规定，使用到部分GPL代码的软件，必须也使用GPL，开发人员不能使用GPL来开发收费软件或者专有软件。LGPL则没有这方面的要求，不要求使用与部分代码相同的&nbsp;License。<br/>
+										<br/>
+										商业软件可以使用，但不能修改LGPL协议的代码。<br/>
+										BSD&nbsp;License<br/>
+										<br/>
+										BSD&nbsp;License与其他自由软件License相比，如GPL，限制更少。但是请注意到BSD&nbsp;License两种版本之间的差别：New&nbsp;BSD&nbsp;License/Modified&nbsp;BSD&nbsp;License&nbsp;和Simplified&nbsp;BSD&nbsp;License/FreeBSD&nbsp;License。它们两者都是于GPL兼容的自由软件License。<br/>
+										<br/>
+										New&nbsp;BSD&nbsp;License&nbsp;(”3-clause&nbsp;license”)&nbsp;可以用于任何作为版权声明和保证许可的免责声明的目的，可以通过无限长的再分发来得以维持，也就是说如果再发布的产品中包含源代码，则在源代码中必须带有原来代码中的BSD协&nbsp;议。它还有一个特殊限制条款，不用特别的许可就是限制使用派生工作的工作者名字，也就是说不可以用开源代码的作者/机构名字和原来产品的名字做市场推广。<br/>
+										<br/>
+										New&nbsp;BSD&nbsp;License和Simplified&nbsp;BSD&nbsp;License的主要区别是，后者忽略了非认可条款。<br/>
+										<br/>
+										商业软件可以使用，也可以修改使用BSD协议的代码。<br/>
+										MIT&nbsp;License<br/>
+										<br/>
+										MIT是和BSD一样宽松的许可协议,作者只想保留版权,而无任何其他了限制.也就是说,你必须在你的发行版里包含原许可协议的声明,无论你是以二进制发布的还是以源代码发布的。<br/>
+										<br/>
+										*&nbsp;你可以使用，复制和修改软件<br/>
+										*&nbsp;你可以免费使用软件或出售<br/>
+										*&nbsp;唯一的限制是，它是必须附有MIT授权协议<br/>
+										<br/>
+										商业软件可以使用，也可以修改MIT协议的代码，甚至可以出售MIT协议的代码。<br/>
+										Mozilla&nbsp;Public&nbsp;License&nbsp;1.1&nbsp;(MPL)<br/>
+										<br/>
+										MPL协议允许免费重发布、免费修改，但要求修改后的代码版权归软件的发起者。这种授权维护了商业软件的利益，，它要求基于这种软件得修改无偿贡献版权给该软件。这样，围绕该软件得所有代码得版权都集中在发起开发人得手中。但MPL是允许修改，无偿使用得。MPL软件对链接没有要求。<br/>
+										<br/>
+										商业软件可以使用，也可以修改MPL协议的代码，但修改后的代码版权归软件的发起者。<br/>
+										Common&nbsp;Development&nbsp;and&nbsp;Distribution&nbsp;License<br/>
+										<br/>
+										CDDL（Common&nbsp;Development&nbsp;and&nbsp;Distribution&nbsp;License，通用开发与销售许可）开源协议，是MPL（Mozilla&nbsp;Public&nbsp;License）的扩展协议，它允许公共版权使用，无专利费，并提供专利保护，可集成于商业软件中，允许自行发布许可。<br/>
+										<br/>
+										商业软件可以使用，也可以修改CDDL协议的代码。<br/>
+										Apache&nbsp;License<br/>
+										<br/>
+										Apache&nbsp;Licence是著名的非盈利开源组织Apache采用的协议。该协议和BSD类似，同样鼓励代码共享和尊重原作者的著作权，同样允许代码修改，再发布&nbsp;(作为开源或商业软件)。需要满足的条件：<br/>
+										<br/>
+										*&nbsp;需要给代码的用户一份Apache&nbsp;License。<br/>
+										*&nbsp;如果你修改了代码，需要在被修改的文件中说明。<br/>
+										*&nbsp;在延伸的代码中（修改和有源代码衍生的代码中）需要带有原来代码中的协议，商标，专利声明和其他原来作者规定需要包含的说明。<br/>
+										*&nbsp;如果再发布的产品中包含一个Notice文件，则在Notice文件中需要带有Apache&nbsp;License。你可以在Notice中增加自己的许可，但不可以表现为对Apache&nbsp;License构成更改。<br/>
+										<br/>
+										Apache&nbsp;Licence也是对商业应用友好的许可。使用者也可以在需要的时候修改代码来满足需要并作为开源或商业产品发布/销售。<br/>
+										<br/>
+										商业软件可以使用，也可以修改使用Apache协议的代码。<br/>
+										Eclipse&nbsp;Public&nbsp;License<br/>
+										<br/>
+										EPL是一个与CPL相类似的许可证，任何扩展自Eclipse源码的代码也必须是开源的。<br/>
+										Creative&nbsp;Commons<br/>
+										<br/>
+										Creative&nbsp;Commons（CC）的许可证不太开放源代码授权，它们通常用于设计项目。&nbsp;CC许可证有着宽广的定义，每个定义都会授予一定的权利。它有四个基本部分，可以单独或者组合使用。下面是部分概述：<br/>
+										<br/>
+										*&nbsp;署名<br/>
+										<br/>
+										作者必须是作品的原创者。&nbsp;除此之外，作品可以修改，分发，复制和以其他方式使用。<br/>
+										*&nbsp;相同方式共享<br/>
+										<br/>
+										工作可以修改，分发等等，但必须在一个许可证下。<br/>
+										*&nbsp;非商业<br/>
+										<br/>
+										可以修改，分发等，但不用于商业目的。&nbsp;关于什么是“商业”，说法比较含糊（没有提供明确的定义），因此您可能需要在自己的项目中澄清这一点。<br/>
+										*&nbsp;禁止修改<br/>
+										<br/>
+										这意味着您可以复制和分发许可工作，但你不能以任何方式修改，或在原有的基础开发。<br/>
+										<br/>
+										商业软件的使用要遵从CC协议的具体规定，最严格的许可证将是“署名，非商业，不能修改”的授权。这意味着你可以自由共享的工作，但不能改变它，你必须把它归功于原创者。<br/>
+										Common&nbsp;Public&nbsp;License&nbsp;1.0<br/>
+										<br/>
+										Common许可证有一些细节性的规定值得参考:<br/>
+										<br/>
+										*&nbsp;明确了专利授权。一般的开源软件都明确源代码的版权人将自己的修改权、复制权等版权权利向公众许可，但保留署名权，而Common许可证在此基础上还明确假如源代码中含有专利权，源代码专利权人将复制、使用的专有权利向公众许可。<br/>
+										*&nbsp;规定可以将源代码及修改过的源代码与其他类型的不受本许可证约束的代码结合，以新产品的形式发布，只要其中经该许可证获得的源代码及修改过的源代码能按该许可证的要求发布即可。<br/>
+										*&nbsp;细化了该许可证终止的情形，包括发生专利侵权诉讼。<br/>
+										*&nbsp;明确了一个独立承担责任的原则，就是假如按该许可证使用源代码的使用者将获得的源代码应用于商业使用，那么他就要对在商业应用中出现的由于使用该源代码程序而产生的侵权诉讼承担完全责任。这一条规定是比较特殊的，绝大多数开源软件许可证都不这么要求。<br/>
+										<br/>
+										商业软件可以使用，也可以修改Common协议的代码，但要承担代码产生的侵权责任。<br/>
+										<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;community<br/>
+										<br/>
+										3&nbsp;Answers<br/>
+										0<br/>
+										Answered&nbsp;3/31/2010<br/>
+										不错，讲解的挺细，学习了！emoticon<br/>
+										0<br/>
+										Answered&nbsp;5/26/2010<br/>
+										liferay6的协议不是mit了，这个对我们使用liferay平台做二次开发会带来什么影响吗？比如我们使用liferay6平台给电信开发软件.开发出来的软件必须开源吗？需要给liferay公司付费吗？<br/>
+										Replied&nbsp;7/5/2010<br/>
+										如Gavin在开头介绍的，LP6使用LGPL，那么就是可以基于Liferay内核做插件等的开发定制，但是不能修改内核并把修改后的内核重新发布为新的商业产品。这样做也是为了能有一个相对统一的平台，便于维护，提高为LP做的插件的通用性。当然也许会影响到某些想通过修改内核代码来发布新的产品的人的利益，但是从个人来讲，我是支持使用这个协议的。<br/>
+										<br/>
+										以上仅为个人理解，欢迎指正！<br/>
+										<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;还有另一个GNU&nbsp;License：GNU&nbsp;Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;（LGPL）。比起GPL它授予的权限较少。一般来说，LGPL比较适合连接到非GPL或者非开源文件的库文件。由于GPL的规定，使用到部分GPL代码的软件，必须也使用GPL，开发人员不能使用GPL来开发收费软件或者专有软件。LGPL则没有这方面的要求，不要求使用与部分代码相同的&nbsp;License。<br/>
+										<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;商业软件可以使用，但不能修改LGPL协议的代码。<br/>
+									</div>
+								</div>
+							</div>
+						</li>
 						<li><a target="_blank" href="https://www.cnblogs.com/Wayou/p/how_to_choose_a_license.html">如何为你的代码选择一个开源协议 - 刘哇勇 - 博客园</a></li>
+						<li>
+							<div>
+								<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地摘抄</span>还未摘抄
+								<div style="display:none;">
+									<script>add_fold(document.currentScript);</script>
+									<div class="class___copy_other_people_content">
+									</div>
+								</div>
+							</div>
+						</li>
 						<li><a target="_blank" href="https://blog.csdn.net/CatherineJChen/article/details/105362409">开源项目加Apache License2.0不会用，看看Apache Ant怎么做_AliveCode,Code Life-CSDN博客</a></li>
+						<li>
+							<div>
+								<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地摘抄</span>还未摘抄
+								<div style="display:none;">
+									<script>add_fold(document.currentScript);</script>
+									<div class="class___copy_other_people_content">
+									</div>
+								</div>
+							</div>
+						</li>
+						<li><a target="_blank" href="https://blog.csdn.net/Aria_Miazzy/article/details/103895088">Apache Licene 2.0 协议说明_YunWisdom-CSDN博客_apache2.0</a></li>
+						<li>
+							<div>
+								<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地摘抄</span>
+								<div style="display:none;">
+									<script>add_fold(document.currentScript);</script>
+									<div class="class___copy_other_people_content">
+										<br/>
+										Apache&nbsp;Licene&nbsp;2.0&nbsp;协议说明<br/>
+										简介<br/>
+										<br/>
+										Apache&nbsp;Licence是著名的非盈利开源组织Apache采用的协议。该协议和BSD类似，同样鼓励代码共享和尊重原作者的著作权，同样允许代码修改，再发布（作为开源或商业软件）。需要满足的条件也和BSD类似：<br/>
+										<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;需要给代码的用户一份Apache&nbsp;Licence<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;如果你修改了代码，需要在被修改的文件中说明。<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;在延伸的代码中（修改和有源代码衍生的代码中）需要带有原来代码中的协议，商标，专利声明和其他原来作者规定需要包含的说明。<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;如果再发布的产品中包含一个Notice文件，则在Notice文件中需要带有Apache&nbsp;Licence。你可以在Notice中增加自己的许可，但不可以表现为对Apache&nbsp;Licence构成更改。<br/>
+										<br/>
+										Apache&nbsp;Licence也是对商业应用友好的许可。使用者也可以在需要的时候修改代码来满足需要并作为开源或商业产品发布/销售。<br/>
+										<br/>
+										&nbsp;<br/>
+										APACHE许可证版本<br/>
+										<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;文字版本：https：//www.apache.org/licenses/LICENSE-2.0.txt<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;SPDX短标识符：Apache-2.0<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;OSI批准的许可证：https&nbsp;:&nbsp;//opensource.org/licenses/Apache-2.0<br/>
+										<br/>
+										2004年，ASF批准了Apache许可证的2.0版本，该许可证帮助我们实现了通过协作开源软件开发来提供可靠且使用寿命长的软件产品的目标。<br/>
+										<br/>
+										除非另有明确说明，否则A​​SF产生的所有软件包均根据Apache许可版本2.0隐含许可。<br/>
+										<br/>
+										&nbsp;<br/>
+										<br/>
+										Apache许可证<br/>
+										<br/>
+										2.0版，2004年1月<br/>
+										<br/>
+										http://www.apache.org/licenses/<br/>
+										<br/>
+										使用，复制和分发的条款和条件<br/>
+										<br/>
+										1.定义。<br/>
+										<br/>
+										“&nbsp;许可&nbsp;”是指本文档第1至9节定义的使用，复制和分发的条款和条件。<br/>
+										<br/>
+										“&nbsp;许可人&nbsp;”是指版权所有者或授予许可证的版权所有者授权的实体。<br/>
+										<br/>
+										“&nbsp;法人实体&nbsp;”是指行为实体与控制该实体，由该实体控制或受其共同控制的所有其他实体的联合。就本定义而言，“&nbsp;控制&nbsp;”是指（i）导致该实体通过合同或其他方式进行指示或管理的直接或间接权力，或（ii）百分之五十（50％）的所有权或更多的已发行股票，或（iii）该实体的实益拥有权。<br/>
+										<br/>
+										“&nbsp;您&nbsp;”（或“&nbsp;您的&nbsp;”）是指行使本许可授予的许可的个人或法人实体。<br/>
+										<br/>
+										“&nbsp;源&nbsp;”形式是指进行修改的首选形式，包括但不限于软件源代码，文档源和配置文件。<br/>
+										<br/>
+										“&nbsp;对象&nbsp;”形式是指源形式的机械转换或翻译产生的任何形式，包括但不限于已编译的目标代码，生成的文档以及对其他媒体类型的转换。<br/>
+										<br/>
+										“&nbsp;作品&nbsp;”是指根据许可获得的著作权作品，无论是源形式还是对象形式，均应包含在该作品中或随附于其上的版权声明所指示（以下附录中提供了一个示例）。<br/>
+										<br/>
+										“&nbsp;衍生作品&nbsp;”是指基于（或衍生自）作品的任何作品，无论是源形式还是对象形式，其编辑修订，注释，细化或其他修改在整体上代表原始作品的作者身份。就本许可而言，衍生作品不应包括与该作品及其衍生作品保持分离或仅与其链接（或按名称绑定）的作品。<br/>
+										<br/>
+										“&nbsp;贡献&nbsp;”是指版权拥有者，个人或个人有意向许可人提交以包括在作品中的任何创作作品，包括作品的原始版本以及对该作品或衍生作品的任何修改或增补。授权代表版权所有者提交的法人实体。就本定义而言，“已提交”是指发送给许可方或其代表的任何形式的电子，口头或书面通讯，包括但不限于电子邮件清单，源代码控制系统和由或代表其管理的问题跟踪系统上的通讯，许可人，以讨论和改进作品为目的，但不包括版权拥有者明显标记或以其他方式书面指定为“&nbsp;非贡献”的交流。”<br/>
+										<br/>
+										“&nbsp;贡献者&nbsp;”是指许可人以及许可人已经代表其收到贡献并随后合并到作品中的任何个人或法人实体。<br/>
+										<br/>
+										2.授予版权许可。根据本许可的条款和条件，每位贡献者特此授予您永久的，全球性的，非排他性的，免费的，免版税的，不可撤销的版权许可，以复制，准备，公开展示，公开表演，分许可，并以“源”或“对象”形式分发作品和此类衍生作品。<br/>
+										<br/>
+										3.授予专利许可。在遵守本许可的条款和条件的前提下，每位贡献者特此授予您永久性的，全球性的，非排他性的，免费的，免版税的，不可撤销的（本节中规定的除外）专利许可，用于制作，制作，使用，要约出售，出售，进口和以其他方式转让该作品，且该许可仅适用于该贡献者应许可的专利索赔，而这些专利索赔仅因其贡献或与他们的贡献相结合而受到侵犯提交此类贡献的作品。如果您针对任何实体（包括诉讼中的交叉索赔或反索赔）提起专利诉讼，指称该作品或该作品中包含的贡献构成直接或共同的专利侵权，<br/>
+										<br/>
+										4.重新分配。您可以在满足以下条件的情况下，以任何媒介（有或没有修改）以源或对象的形式复​​制和分发作品或其衍生作品的副本：<br/>
+										<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;您必须向该作品或衍生作品的任何其他接收者提供本许可的副本；和<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;您必须使所有修改过的文件带有明显的声明，表明您已更改文件；和<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;您必须以您分发的任何衍生作品的源代码形式保留该作品的源代码形式的所有版权，专利，商标和出处声明，但不包括与该衍生作品的任何部分无关的那些声明；和<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;如果作品中包含“&nbsp;注意文本文件作为其分发的一部分，那么您分发的任何衍生作品都必须在至少一个“注释”文件中包含可读的副本，其中包含该NOTICE文件中的归属声明，但不包括与衍生作品的任何部分均不相关的那些声明在以下位置：在作为衍生作品的一部分分发的NOTICE文本文件中；在源表单或文档（如果与衍生作品一起提供）中；或者在由衍生作品生成的显示中，如果（无论在何处）通知通常会出现。NOTICE文件的内容仅供参考，不能修改许可。您可以在自己分发的衍生作品中添加自己的署名通知，或者与作品中的NOTICE文本一起或作为附录，前提是此类附加的所有权声明不能解释为修改许可。<br/>
+										<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;您可以在自己的修改中添加您自己的版权声明，并可以提供其他或不同的许可条款和条件，以使用，复制或分发您的修改，或为整个此类衍生作品，前提是您使用，复制和分发了否则，作品应符合本许可中规定的条件。<br/>
+										<br/>
+										5.提交会费。除非您另有明确说明，否则您有意提交给许可人的包括在作品中的任何贡献均应遵守本许可的条款和条件，没有任何其他条款或条件。尽管有上述规定，本文中的任何内容都不能取代或修改您可能与许可方签署的有关此类贡献的任何单独许可协议的条款。<br/>
+										<br/>
+										6.商标。本许可不授予使用许可方的商标名称，商标，服务标记或产品名称的许可，除非在描述作品来源和复制通知文件内容时合理和惯常使用是必需的。<br/>
+										<br/>
+										7.免责声明。除非适用法律要求或书面同意，否则许可方将按“原样”提供工作（每个贡献者均应提供其贡献），而没有任何明示或暗示的保证或条件，包括但不限于任何标题，非侵权，可贸易性或特定目的适用性的担保或条件。您应自行负责确定使用或重新分发作品的适当性，并承担与您根据本许可行使许可有关的任何风险。<br/>
+										<br/>
+										8.责任范围。在任何情况下，也没有任何法律理论上的依据，无论是侵权（包括过失），合同还是其他方式，除非适用法律要求（例如故意和重大过失行为）或书面同意，否则任何贡献者均应对您承担以下责任：损害赔偿，包括因本许可或由于使用或无法使用作品而引起的任何性质的任何直接，间接，特殊，偶然或结果性损害（包括但不限于因商誉损失，停工而造成的损害赔偿）&nbsp;，计算机故障或故障，或任何及所有其他商业损坏或损失），即使已告知该贡献者此类损坏的可能性。<br/>
+										<br/>
+										9.接受保修或额外责任。在重新分发作品或其衍生作品时，您可以选择提供并收取一定费用，以接受与本许可证一致的支持，担保，赔偿或其他责任义务和/或权利。但是，在接受此类义务时，您只能代表您自己并独自承担责任，不能代表任何其他贡献者，并且仅在您同意赔偿，捍卫每个贡献者并使他们不承担任何责任的情况下，或由于您接受任何此类保证或其他责任而针对该贡献者提出的索赔。<br/>
+										<br/>
+										条款和条件的结尾<br/>
+										&nbsp;<br/>
+										如何在工作中应用APACHE许可证<br/>
+										<br/>
+										您应该在工作中包括一个Apache许可证的副本，通常在一个名为LICENSE的文件中，并考虑还包括一个NOTICE文件。<br/>
+										<br/>
+										要将Apache许可证应用于您工作中的特定文件，请附加以下样板声明，用括号“&nbsp;[]”括起来的字段替换为您自己的标识信息。（不包括方括号！）文本应包含在文件格式的相应注释语法中。我们还建议在与版权声明相同的“印刷页面”中包含文件或类名以及用途说明，以便在第三方档案中更容易识别。<br/>
+										<br/>
+										<br/>
+										<br/>
+										<br/>
+										版权[yyyy]&nbsp;[版权所有者名称]<br/>
+										根据Apache许可版本2.0（“许可”）许可；<br/>
+										除非遵守许可，否则不得使用此文件。<br/>
+										您可以在以下位置获得许可的副本：http://www.apache.org/licenses/LICENSE-2.0<br/>
+										除非适用法律要求或书面同意，否则软件<br/>
+										根据许可分发的内容按“原样”分发，<br/>
+										没有任何明示或暗示的保证或条件。<br/>
+										有关特定语言的管理权限，请参阅许可证。<br/>
+										许可中的限制。<br/>
+										<br/>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li><a target="_blank" href="https://blog.csdn.net/qi15211/article/details/84070709">Apache LICENSE 2.0 授权介绍_qi15211的专栏-CSDN博客_apache-2.0 license</a></li>
+						<li>
+							<div>
+								<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地摘抄</span>
+								<div style="display:none;">
+									<script>add_fold(document.currentScript);</script>
+									<div class="class___copy_other_people_content">
+										Apache&nbsp;LICENSE&nbsp;2.0&nbsp;授权介绍<br/>
+										<br/>
+										当我们使用github或者其它地方的开源项目时候，需要注意开源项目的授权协议。开源不等于免费使用，如果公司使用开源项目时候违反其开源协议，有可能给公司或者个人带来版权纠纷。使用时候需要慎重阅读开源代码提供者的授权条件。<br/>
+										<br/>
+										各种开源协议区别看此博客&nbsp;https://www.oschina.net/question/54100_9455<br/>
+										<br/>
+										本文介绍apache&nbsp;2.0授权协议，<br/>
+										<br/>
+										原文地址&nbsp;http://www.apache.org/licenses/LICENSE-2.0<br/>
+										<br/>
+										Apache许可证<br/>
+										<br/>
+										版本2。0，2004年1月<br/>
+										<br/>
+										http://www.apache.org/licenses/<br/>
+										<br/>
+										使用，复制和分发的条款和条件<br/>
+										<br/>
+										1.定义。<br/>
+										<br/>
+										“许可”是指本文件第1至9节所定义的使用，复制和分发的条款和条件。<br/>
+										<br/>
+										“许可方”是指版权所有者授权的版权所有者或实体授予许可。<br/>
+										<br/>
+										“法人实体”是指代理实体与控制，受其控制或与该实体共同控制的所有其他实体的联合。就本定义而言，“控制”是指（i）直接或间接导致该实体的指示或管理的权力，无论是通过合同还是其他方式，或（ii）所有权的百分之五十（50％）或更多已发行股份，或（iii）该实体的实益拥有权。<br/>
+										<br/>
+										“您”（或“您的”）是指行使本许可授予的权限的个人或法人实体。<br/>
+										<br/>
+										“源”表单是指进行修改的首选形式，包括但不限于软件源代码，文档源和配置文件。<br/>
+										<br/>
+										“对象”表单是指源表单的机械转换或转换产生的任何表单，包括但不限于编译的目标代码，生成的文档以及转换为其他媒体类型。<br/>
+										<br/>
+										“作品”指作品的作品，无论是源形式还是对象形式，根据许可证提供，如作品中包含或附加的版权声明所示（示例见下文附录）。<br/>
+										<br/>
+										“衍生作品”是指任何基于（或衍生自）作品的作品，无论是源文件还是对象形式，编辑修订，注释，阐述或其他修改作为一个整体代表原创作品作者身份。就本许可而言，衍生作品不得包括与其作品及衍生作品的界面分开或仅仅链接（或通过名称约束）的作品。<br/>
+										<br/>
+										“贡献”是指作者的任何作品，包括作品的原始版本以及对该作品或其衍生作品的任何修改或补充，有意提交给许可人，以便由版权所有者或个人包含在作品中。法人实体有权代表版权所有者提交。就本定义而言，“提交”是指发送给许可方或其代表的任何形式的电子，口头或书面通信，包括但不限于电子邮件列表上的通信，源代码控制系统和问题跟踪系统。由许可方管理或代表许可方进行管理，以便讨论和改进工作，<br/>
+										<br/>
+										“贡献者”是指许可方以及许可方已收到其贡献并随后纳入本作品的任何个人或法人实体。<br/>
+										<br/>
+										2.授予版权许可。在遵守本许可的条款和条件的前提下，每位投稿人特此授予您永久的，全球性的，非独家的，免费的，免版税的，不可撤销的版权许可，以复制，准备衍生作品，公开展示，公开演出，从属许可证，并以源或对象形式分发工作和此类衍生作品。<br/>
+										<br/>
+										3.授予专利许可。在遵守本许可的条款和条件的前提下，每位投稿人特此授予您永久的，全球性的，非独家的，免费的，免版税的，不可撤销的（除本节所述之外）专利许可，使用，出售，出售，进口和以其他方式转让作品，此类许可仅适用于此类贡献者可获许可的专利权利要求，这些权利要求必须单独或通过其贡献与其贡献相结合而受到侵害。提交此类贡献的工作。如果您针对任何实体（包括诉讼中的交叉索赔或反诉）提起专利诉讼，指称作品中包含的作品或贡献构成直接或共同的专利侵权，<br/>
+										<br/>
+										4.再分配。您可以在任何媒介中复制和分发其作品或衍生作品的副本，无论是否经过修改，以源或对象形式，只要您符合以下条件：<br/>
+										<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;您必须向作品或衍生作品的任何其他收件人提供本许可证的副本;&nbsp;和<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;您必须使任何修改过的文件带有明显的通知，说明您更改了文件;&nbsp;和<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;您必须在您分发的任何衍生作品的来源表格中保留作品来源表格中的所有版权，专利，商标和归属声明，不包括那些与衍生作品的任何部分无关的声明;&nbsp;和<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;如果作品包含“通知”文本文件作为其分发的一部分，那么您分发的任何衍生作品必须包含此类NOTICE文件中包含的归属通知的可读副本，不包括那些与任何部分无关的通知。衍生作品，至少在下列其中一个地方：作为衍生作品的一部分分发的通知文本文件中;&nbsp;在源表格或文件中，如果与衍生作品一起提供;&nbsp;或者，在衍生作品产生的显示内，如果通常出现此类第三方通知。NOTICE文件的内容仅供参考，不得修改许可证。您可以在您分发的衍生作品中添加您自己的归属通知，并将其作为工作中的通知文本的附录或作为附录添加，&nbsp;<br/>
+										<br/>
+										&nbsp;&nbsp;&nbsp;&nbsp;您可以将自己的版权声明添加到您的修改中，并且可以为您的修改或任何此类衍生作品的使用，复制或分发提供额外或不同的许可条款和条件，前提是您使用，复制和分发否则，本作品符合本许可证中规定的条件。<br/>
+										<br/>
+										5.提交文稿。除非您明确说明，否则任何有意提交给您的作品的贡献均应遵守本许可的条款和条件，不附加任何附加条款或条件。尽管有上述规定，本协议中的任何内容均不得取代或修改您与许可方就此类文稿签署的任何单独许可协议的条款。<br/>
+										<br/>
+										6.商标。本许可证不允许使用许可方的商品名称，商标，服务标记或产品名称，除非在描述工作原产地和复制NOTICE文件内容时合理和惯常使用。<br/>
+										<br/>
+										7.免责声明。除非适用法律要求或书面同意，否则许可方根据“现状”提供工作（并且每个贡献者提供其贡献），不附带任何明示或暗示的担保或条件，包括但不限于任何标题，非侵权，适销性或特定用途的适用性的保证或条件。您自行负责确定使用或重新分发作品的适当性，并承担与您在本许可下行使权限相关的任何风险。<br/>
+										<br/>
+										8.责任限制。在任何情况下，在没有法律理论的情况下，无论是侵权行为（包括疏忽），合同还是其他行为，除非适用法律要求（例如故意和严重疏忽行为）或书面同意，否则任何贡献者均应对您承担责任。损害赔偿，包括因本许可证或因使用或无法使用本作品而导致的任何性质的任何直接，间接，特殊，偶然或后果性损害（包括但不限于商誉损失，停工等损害赔偿）&nbsp;，计算机故障或故障，或任何和所有其他商业损害或损失），即使此类贡献者已被告知可能发生此类损害。<br/>
+										<br/>
+										9.接受保证或额外责任。在重新分发其作品或衍生作品时，您可以选择提供并收取与本许可证一致的支持，保证，赔偿或其他责任义务和/或权利的费用。但是，在接受此类义务时，您可以仅代表您自己并且不代表任何其他贡献者承担全部责任，并且仅当您同意赔偿，辩护并保持每个贡献者免于因此而产生的任何责任时，或由于您接受任何此类保证或额外责任而对此类投诉人提出索赔。<br/>
+										<br/>
+										条款和条件的终止<br/>
+										附录：如何将APACHE许可证应用于您的工作¶<br/>
+										<br/>
+										要将Apache许可证应用于您的工作，请附上以下样板通知，括号“[]”括起的字段将替换为您自己的标识信息。（不要包含括号！）文本应包含在文件格式的相应注释语法中。我们还建议将文件或类别名称和目的描述包含在与版权声明相同的“打印页面”中，以便在第三方档案中进行识别。<br/>
+										<br/>
+										<br/>
+										"Copyright&nbsp;[yyyy]&nbsp;[name&nbsp;of&nbsp;copyright&nbsp;owner]<br/>
+										<br/>
+										Licensed&nbsp;under&nbsp;the&nbsp;Apache&nbsp;License,&nbsp;Version&nbsp;2.0&nbsp;(the&nbsp;\"License\");you&nbsp;may&nbsp;not&nbsp;use&nbsp;this&nbsp;file&nbsp;except&nbsp;in&nbsp;compliance&nbsp;with&nbsp;the&nbsp;License.You&nbsp;may&nbsp;obtain&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;License&nbsp;at<br/>
+										<span class="class___tab">&#9;</span>http://www.apache.org/licenses/LICENSE-2.0<br/>
+										Unless&nbsp;required&nbsp;by&nbsp;applicable&nbsp;law&nbsp;or&nbsp;agreed&nbsp;to&nbsp;in&nbsp;writing,&nbsp;softwaredistributed&nbsp;under&nbsp;the&nbsp;License&nbsp;is&nbsp;distributed&nbsp;on&nbsp;an&nbsp;\"AS&nbsp;IS\"&nbsp;BASIS,WITHOUT&nbsp;WARRANTIES&nbsp;OR&nbsp;CONDITIONS&nbsp;OF&nbsp;ANY&nbsp;KIND,&nbsp;either&nbsp;express&nbsp;or&nbsp;implied.See&nbsp;the&nbsp;License&nbsp;for&nbsp;the&nbsp;specific&nbsp;language&nbsp;governing&nbsp;permissions&nbsp;andlimitations&nbsp;under&nbsp;the&nbsp;License."<br/>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li><a target="_blank" href="https://www.oschina.net/question/54100_9455">五种开源协议(GPL,LGPL,BSD,MIT,Apache) - OSCHINA - 中文开源技术交流社区</a></li>
+						<li>
+							<div>
+								<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地摘抄</span>还未摘抄
+								<div style="display:none;">
+									<script>add_fold(document.currentScript);</script>
+									<div class="class___copy_other_people_content">
+									</div>
+								</div>
+							</div>
+						</li>
 						<li><a target="_blank" href="https://zhuanlan.zhihu.com/p/36091228">科普一下GPL和开源软件 - 知乎</a></li>
+						<li>
+							<div>
+								<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地摘抄</span>还未摘抄
+								<div style="display:none;">
+									<script>add_fold(document.currentScript);</script>
+									<div class="class___copy_other_people_content">
+									</div>
+								</div>
+							</div>
+						</li>
 						<li><a target="_blank" href="https://zhuanlan.zhihu.com/p/101206609">GPL协议中国第一案尘埃落定，相关开源软件应如何风控？ - 知乎</a></li>
+						<li>
+							<div>
+								<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地摘抄</span>还未摘抄
+								<div style="display:none;">
+									<script>add_fold(document.currentScript);</script>
+									<div class="class___copy_other_people_content">
+									</div>
+								</div>
+							</div>
+						</li>
 						<li><a target="_blank" href="https://zhuanlan.zhihu.com/p/97744548">中国 GPL 诉讼第一案：关于 GPL 问题的探讨 - 知乎</a></li>
+						<li>
+							<div>
+								<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地摘抄</span>还未摘抄
+								<div style="display:none;">
+									<script>add_fold(document.currentScript);</script>
+									<div class="class___copy_other_people_content">
+									</div>
+								</div>
+							</div>
+						</li>
 					</ul>
 					<ul>
 						<h3>安全</h3>
