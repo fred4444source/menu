@@ -7,6 +7,21 @@
 		<style>
 		</style>
 		<script>
+			const add_fold = function(currentScript) {
+				const cs = currentScript;
+				const pn = cs.parentNode;
+				const ppn = pn.parentNode;
+				ppn.children[0].addEventListener('click', function(e) {
+					let display = pn.style.getPropertyValue('display');
+					if (display) {
+						ppn.children[0].textContent = '-';
+						pn.style.removeProperty('display');
+					} else {
+						ppn.children[0].textContent = '+';
+						pn.style.setProperty('display', 'none');
+					}
+				});
+			}
 		</script>
 	</head>
 	<body>
@@ -19,6 +34,70 @@
 				<div>
 					<ul>
 						<li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">Standard built-in objects - JavaScript | MDN</a></li>
+						<li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions">Method definitions - JavaScript | MDN</a></li>
+						<div>
+							<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地截图</span>
+							<div style="display:none;">
+								<script>add_fold(document.currentScript);</script>
+								<img src="./refs/imgs/Method_definitions_JavaScript_MDN.png"/>
+							</div>
+						</div>
+						<li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get">getter - JavaScript | MDN</a></li>
+						<div>
+							<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地截图</span>
+							<div style="display:none;">
+								<script>add_fold(document.currentScript);</script>
+								<img src="./refs/imgs/getter_JavaScript_MDN.png"/>
+							</div>
+						</div>
+						<li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set">setter - JavaScript | MDN</a></li>
+						<div>
+							<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地截图</span>
+							<div style="display:none;">
+								<script>add_fold(document.currentScript);</script>
+								<img src="./refs/imgs/setter_JavaScript_MDN.png"/>
+							</div>
+						</div>
+						<li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">Classes - JavaScript | MDN</a></li>
+						<div>
+							<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地截图</span>
+							<div style="display:none;">
+								<script>add_fold(document.currentScript);</script>
+								<img src="./refs/imgs/Classes_JavaScript_MDN.png"/>
+							</div>
+						</div>
+						<li><a target="_blank" href="https://rfrn.org/~shu/2018/05/02/the-semantics-of-all-js-class-elements.html">The Semantics of All JS Class Elements</a></li>
+						<div>
+							<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地截图</span>
+							<div style="display:none;">
+								<script>add_fold(document.currentScript);</script>
+								<img src="./refs/imgs/The_Semantics_of_All_JS_Class_Elements.png"/>
+							</div>
+						</div>
+						<li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields">Public class fields - JavaScript | MDN</a></li>
+						<div>
+							<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地截图</span>
+							<div style="display:none;">
+								<script>add_fold(document.currentScript);</script>
+								<img src="./refs/imgs/Public_class_fields_JavaScript_MDN.png"/>
+							</div>
+						</div>
+						<li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields">Private class features - JavaScript | MDN</a></li>
+						<div>
+							<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地截图</span>
+							<div style="display:none;">
+								<script>add_fold(document.currentScript);</script>
+								<img src="./refs/imgs/Private_class_features_JavaScript_MDN.png"/>
+							</div>
+						</div>
+						<li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Class_static_initialization_blocks">Class static initialization blocks - JavaScript | MDN</a></li>
+						<div>
+							<span style="display : inline-block; border : 1px solid black; width : 14px; text-align : center;">+</span><span>为防链接失效的本地截图</span>
+							<div style="display:none;">
+								<script>add_fold(document.currentScript);</script>
+								<img src="./refs/imgs/Class_static_initialization_blocks_JavaScript_MDN.png"/>
+							</div>
+						</div>
 						<li><a target="_blank" href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a></li>
 						<li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/MDN/About">About MDN - The MDN project | MDN</a></li>
 						<li><a target="_blank" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla">Mozilla对ECMAScript 6的支持 - JavaScript | MDN</a></li>
